@@ -5,15 +5,10 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "nodemon server"
+		"dev": "nodemon server",
+		"start": "node server"
 	},
-	"keywords": [
-		"Dialog",
-		"Flow",
-		"NodeJS",
-		"Webhook",
-		"Fulfillment"
-	],
+	"keywords": ["Dialog", "Flow", "NodeJS", "Webhook", "Fulfillment"],
 	"author": "Muskan B",
 	"license": "ISC",
 	"dependencies": {
