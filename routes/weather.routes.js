@@ -23,9 +23,10 @@ router.post('/webhook', (req, res) => {
 			} else {
 				console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
 				console.log('body:', body);
+				var r = JSON.parse(body);
 				return res.json({
-					speech: `Description : ${body.weather[0].description}`,
-					displayText: `Description : ${body.weather[0].description}`
+					speech: `Description : ${r.weather[0].description}`,
+					displayText: `Description : ${r.description}`
 				});
 			}
 		});
