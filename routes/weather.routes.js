@@ -17,7 +17,7 @@ router.post('/webhook', (req, res) => {
 		request(options, (error, response, body) => {
 			if (error) {
 				return res.json({
-					speech: `Unable to fetch weather for city - ${city}`,
+					// speech: `Unable to fetch weather for city - ${city}`,
 					displayText: `Unable to fetch weather for city - ${city}`
 				});
 			} else {
@@ -25,15 +25,15 @@ router.post('/webhook', (req, res) => {
 				console.log('body:', body);
 				var r = JSON.parse(body);
 				return res.json({
-					speech: `Description : ${r.weather[0].description}`,
-					displayText: `Description : ${r.description}`
+					// speech: `Description : ${r.weather[0].description}`,
+					fulfillmentText: `Description : ${r.description}`
 				});
 			}
 		});
 	} else {
 		return res.json({
-			speech: `Unable to fetch weather for city - ${city}`,
-			displayText: `Unable to fetch weather for city - ${city}`
+			// speech: `Unable to fetch weather for city - ${city}`,
+			fulfillmentText: `Unable to fetch weather for city - ${city}`
 		});
 	}
 });
