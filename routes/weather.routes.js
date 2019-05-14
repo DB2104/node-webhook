@@ -5,6 +5,7 @@ const API_KEY = process.env.API_KEY;
 router.post('/webhook', (req, res) => {
 	console.log(req);
 	var queryText = req.body.queryResult.queryText;
+	console.log(queryText);
 	var city = req.body.queryResult.parameters['geo-city'];
 	//console.log(queryText);
 
@@ -23,8 +24,8 @@ router.post('/webhook', (req, res) => {
 				console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
 				console.log('body:', body);
 				return res.json({
-					speech: `Description : ${body.weather.description}`,
-					displayText: `Description : ${body.weather.description}`
+					speech: `Description : ${body.weather[0].description}`,
+					displayText: `Description : ${body.weather[0].description}`
 				});
 			}
 		});
