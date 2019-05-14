@@ -3,7 +3,7 @@ const request = require('request');
 require('dotenv').config();
 const API_KEY = process.env.API_KEY;
 router.post('/webhook', (req, res) => {
-	console.log(req.body);
+	console.log(req);
 	var queryText = req.body.queryResult.queryText;
 	var city = req.body.queryResult.parameters['geo-city'];
 	//console.log(queryText);
