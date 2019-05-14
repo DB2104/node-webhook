@@ -2,7 +2,7 @@ const router = require('express').Router();
 const request = require('request');
 require('dotenv').config();
 const API_KEY = process.env.API_KEY;
-router.get('/webhook', (req, res) => {
+router.post('/webhook', (req, res) => {
 	var queryText = req.body.queryResult.queryText;
 	var city = req.body.queryResult.parameters['geo-city'];
 	//console.log(queryText);
