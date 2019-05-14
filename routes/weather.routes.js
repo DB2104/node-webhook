@@ -18,7 +18,7 @@ router.post('/webhook', (req, res) => {
 			if (error) {
 				return res.json({
 					// speech: `Unable to fetch weather for city - ${city}`,
-					displayText: `Unable to fetch weather for city - ${city}`
+					fulfillmentText: `Unable to fetch weather for city - ${city}`
 				});
 			} else {
 				console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
