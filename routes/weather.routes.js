@@ -26,7 +26,7 @@ router.post('/webhook', (req, res) => {
 				var r = JSON.parse(body);
 				return res.json({
 					// speech: `Description : ${r.weather[0].description}`,
-					fulfillmentText: `Description : ${r.description}`
+					fulfillmentText: `Description : ${r.weather[0].description}`
 				});
 			}
 		});
