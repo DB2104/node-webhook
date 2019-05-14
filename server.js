@@ -6,6 +6,9 @@ const app = express();
 var weatherRoutes = require('./routes/weather.routes.js');
 app.use('/weather', weatherRoutes);
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 //start the server
 app.listen(port, err => {
 	if (err) throw err;
